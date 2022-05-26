@@ -1,0 +1,241 @@
+/* Variables */
+.fonctionnalities__card, .container .services button, .container .services h1, .container .services p, .container .positionArea, header {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.fonctionnalities__id {
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 0.7555rem;
+  color: white;
+  background-color: #9356DC;
+  margin-left: -0.8rem;
+  padding-top: 0.25rem;
+}
+
+.fonctionnalities__icon {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.fonctionnalities__icon {
+  font-size: 1.3rem;
+  vertical-align: middle;
+  color: #C3C3C4;
+}
+
+.fonctionnalities__card {
+  display: flex;
+  width: 80%;
+  height: 5rem;
+  margin-top: 1rem;
+  margin-left: 10%;
+  border-radius: 1rem;
+  background-color: #fcfcfc;
+}
+.fonctionnalities__card:hover {
+  background-color: #f6f0fc;
+}
+.fonctionnalities__card:hover .iconFonction {
+  color: #9356DC;
+}
+
+.restaurant .restaurantCard, .fonctionnalities__card {
+  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem #C3C3C4;
+}
+
+.restaurant h1, .fonctionnalities h1, .container .services h1, footer p {
+  margin-left: 5%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: "Roboto";
+}
+
+.container .services button {
+  height: 3.5rem;
+  border: solid;
+  border-radius: 1.75rem;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  padding-left: 3%;
+  background-color: #FF79DA;
+}
+
+.restaurant .restaurantCard__image {
+  border-radius: 1rem 1rem 0 0;
+}
+
+.restaurant .restaurantCard__image {
+  height: 70%;
+  width: 100%;
+  color: black;
+  object-fit: cover;
+  margin-bottom: 0;
+}
+
+footer {
+  padding-top: 0.1rem;
+  background-color: #3B3B3C;
+  color: white;
+  height: 14rem;
+}
+footer p {
+  font-weight: unset;
+  font-family: "Shrikhand";
+}
+footer ul {
+  list-style-type: none;
+  margin-left: -1.5rem;
+}
+footer ul li {
+  margin-bottom: 0.3rem;
+  font-size: 1.15rem;
+}
+footer ul li i {
+  font-size: 0.7rem;
+  margin-right: 0.3rem;
+}
+
+/*******************************************
+*
+*Police
+*
+***************************************/
+@font-face {
+  font-family: "Roboto";
+  src: url("../sass/base/police/Roboto/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Shrikhand";
+  src: url("../sass/base/police/Shrikhand/Shrikhand-Regular.ttf") format("truetype");
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  padding: 1rem;
+  flex-direction: column;
+}
+
+.container .positionArea {
+  background-color: #dddddd;
+  padding-left: 30%;
+  border-top: 0.12rem solid #C3C3C4;
+}
+.container .positionArea .iconPosition {
+  margin-right: 1rem;
+}
+.container .services {
+  flex-direction: column;
+  background-color: #f6f6f7;
+  height: 18rem;
+  padding-top: 2rem;
+}
+.container .services h1, .container .services p {
+  width: 90%;
+  margin-left: 5%;
+}
+.container .services p {
+  font-family: "Roboto";
+}
+.container .services button {
+  width: 60%;
+  margin-left: 20%;
+}
+
+.fonctionnalities {
+  width: 100%;
+  height: 28rem;
+  padding-top: 2rem;
+  background-color: white;
+}
+.fonctionnalities__title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.restaurant {
+  background-color: #f6f6f7;
+  height: 77rem;
+  padding-top: 2rem;
+}
+.restaurant .restaurantCard {
+  height: 16rem;
+  width: 90%;
+  margin-left: 5%;
+  margin-bottom: 1rem;
+  background-color: white;
+  /*
+  @extend   %borderRadiusTop;
+  @extend   %borderRadiusBottom;*/
+  border-radius: 1rem;
+  position: relative;
+}
+.restaurant .restaurantCard__isNew {
+  position: absolute;
+  top: 5%;
+  left: 75%;
+  padding: 2%;
+  font-weight: bold;
+  background-color: #99E2D0;
+  color: #32b091;
+}
+.restaurant .restaurantCard__description {
+  display: flex;
+  background-color: white;
+  margin: 0.5rem 1% 0 1%;
+  height: 22%;
+  width: 98%;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+.restaurant .restaurantCard__description__like {
+  color: black;
+  font-size: 1.5rem;
+  margin: 0.6rem 0 0 25%;
+}
+.restaurant .restaurantCard__description__like:hover .likeHover {
+  background-color: #9356DC;
+}
+.restaurant .restaurantCard__description__text h2, .restaurant .restaurantCard__description__text p {
+  margin: 0 0 0 0.5rem;
+}
+
+footer {
+  /*padding-top: 0.1rem;
+  background-color: #3B3B3C;
+  color: $white;
+  height: 14rem;
+
+  p{
+      @extend %title;
+      font-weight: unset;
+      font-family: 'Shrikhand';
+   }
+
+  ul 
+  {
+      list-style-type: none;
+      margin-left: -1.5rem ;
+
+      li
+      {
+          margin-bottom: 0.3rem;
+          font-size: 1.15rem;
+          i{
+              font-size: 0.7rem;
+              margin-right: 0.3rem;
+          }
+      }
+  } */
+}
+
+/*# sourceMappingURL=style.css.map */

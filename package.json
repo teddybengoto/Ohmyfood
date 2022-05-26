@@ -1,0 +1,19 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "Ohmyfood! est une jeune startup qui voudrait s'imposer sur le marché de la restauration. L'objectif est de développer un site 100% mobile qui répertorie les menus de restaurants gastronomiques. En plus des systèmes classiques de réservation, les clients pourront composer le menu de leur repas pour que les plats soient prêts à leur arrivée. Finis, les temps d'attente au restaurant !",
+  "main": "index.html",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:public/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teddybengoto/P2Ohmyfood.git"
+  },
+  "author": "Teddy BENGOTO",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/teddybengoto/P2Ohmyfood/issues"
+  },
+  "homepage": "https://github.com/teddybengoto/P2Ohmyfood#readme"
+}

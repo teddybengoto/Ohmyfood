@@ -1,0 +1,126 @@
+
+ %alignmentCenter 
+ {
+   display: flex;
+   align-items: center;
+   text-align: center;
+ }
+
+
+%id
+{
+   height: 1.5rem;
+   width: 1.5rem;
+   border-radius: 0.7555rem;
+   color:$white ;
+   background-color: $primary;
+   margin-left: -0.8rem;
+   padding-top: 0.25rem;
+}
+
+%margin
+{
+   margin-left: 5%;
+   margin-right: 5%;
+}
+
+%icon
+{
+   font-size: 1.3rem;
+   vertical-align : middle;
+   color: $dark-grey;
+}
+
+%card
+{
+   display: flex;
+   width: 80%;
+   height: 5rem;
+   margin-top: 1rem;
+   margin-left: 10%;
+   border-radius: 1rem;
+   background-color: lighten($dark-grey, 22%) ;
+   &:hover
+    {
+        background-color: lighten($primary, 36.5%) ;
+        .iconFonction{
+            color: $primary;
+        }   
+    }
+}
+
+%boxShadow
+{
+   box-shadow: 0.1rem 0.1rem 0.1rem  0.1rem $dark-grey ;
+}
+
+%title
+{
+   margin-left: 5%;
+   font-size: 1.5rem;
+   font-weight: bold;
+   font-family: 'Roboto';
+}
+
+%btn
+{
+   height: 3.5rem;
+   border: solid;
+   border-radius: 1.75rem;
+   color: $white;
+   font-weight: bold;
+   font-size: 1rem;
+   padding-left: 3%;
+   background-color: $secondary; 
+}
+
+
+%borderRadiusTop
+{
+    border-radius: 1rem 1rem 0 0 ;
+}
+
+%borderRadiusBottom
+{
+    border-radius: 0 0 1rem 1rem ;
+}
+
+%image
+{  
+    height: 70%;
+    width: 100%;
+    color: black;
+    object-fit:cover;
+    margin-bottom: 0;
+}
+
+%footer
+{
+    padding-top: 0.1rem;
+    background-color: #3B3B3C;
+    color: $white;
+    height: 14rem;
+
+    p{
+        @extend %title;
+        font-weight: unset;
+        font-family: 'Shrikhand';
+     }
+
+    ul 
+    {
+        list-style-type: none;
+        margin-left: -1.5rem ;
+
+        li
+        {
+            margin-bottom: 0.3rem;
+            font-size: 1.15rem;
+            i{
+                font-size: 0.7rem;
+                margin-right: 0.3rem;
+            }
+        }
+    } 
+
+}
