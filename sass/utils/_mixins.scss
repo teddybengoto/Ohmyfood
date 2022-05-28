@@ -1,0 +1,17 @@
+
+
+@mixin borderRadius ($posi,$val) {
+
+
+    @if ($posi=='bottom'){
+        border-radius: 0 0 $val $val  ;
+    }
+    @if ($posi=='top'){       
+        border-radius: $val $val 0 0 ;
+    }
+    @if($posi=='both'){
+        border-radius: $val $val $val $val  ;
+    }
+    
+}
+

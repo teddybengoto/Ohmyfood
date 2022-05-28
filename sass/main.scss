@@ -1,0 +1,281 @@
+
+@import './utils/variables';
+@import './utils/extensions';
+@import './utils/mixins';
+@import './base/polices';
+
+/*******************************************
+*
+*Police
+*
+***************************************/
+
+
+ 
+
+ *{
+    box-sizing: border-box;
+  }
+
+  body
+  {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+  }
+  
+
+ 
+header
+{
+    @extend  %alignmentCenter;
+    padding: 1rem;
+    flex-direction: column;
+}
+
+
+.container{
+
+    .positionArea{
+        background-color:lighten($dark-grey, 10%) ;
+        @extend  %alignmentCenter;  
+        padding-left: 30%;
+        border-top: 0.12rem solid  $dark-grey;
+
+        .iconPosition
+        {
+            margin-right: 1rem;
+        }
+    }
+    
+    .services{
+
+        flex-direction: column;
+        background-color: lighten($dark-grey, 20%) ;
+        height: 18rem;
+        padding-top: 2rem;
+
+        h1, p
+        {
+            width: 90%;
+            margin-left: 5%;
+            @extend  %alignmentCenter;
+        }
+
+        h1
+        {
+            @extend %title;
+        }
+        p
+        {
+            font-family: 'Roboto' ;
+
+        }
+
+        button
+        {
+            @extend %btn;
+            @extend  %alignmentCenter;
+            width: 60%;
+            margin-left: 20%;            
+        }
+
+    }
+
+}
+
+
+
+
+.fonctionnalities
+{
+    width: 100%;
+    height: 28rem;
+    padding-top: 2rem;
+    background-color: $white;
+
+    h1
+    {
+        @extend %title ;
+    }
+   
+    &__card 
+    {
+        @extend %card;
+        @extend %alignmentCenter;
+        @extend %boxShadow  ;        
+    }
+ 
+    &__id
+    {
+        @extend %id; 
+    }
+
+    &__icon
+    {
+        @extend %margin;
+        @extend %icon;
+    }
+
+    &__title
+    {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+}
+
+
+
+.restaurant
+{
+    background-color: lighten($dark-grey, 20%) ;
+    height: 77rem;
+    padding-top: 2rem;
+
+
+    h1
+    {
+        @extend %title ;
+    }
+
+
+    .restaurantCard
+    {
+        height: 16rem;
+        width: 90%;
+        margin-left: 5%;
+        margin-bottom: 1rem;
+        background-color: $white;
+        // Todo Make it simple
+        /*
+        @extend   %borderRadiusTop;
+        @extend   %borderRadiusBottom;*/
+        border-radius: 1rem ;
+        position: relative;
+
+        @extend %boxShadow;
+
+        &__image
+        {
+            @extend %image;
+            @include borderRadius('top',1rem);
+
+
+        }
+        &__isNew
+        {
+            position: absolute;
+            top: 5%;
+            left: 75%;
+            padding: 2%;
+            font-weight: bold;
+            background-color:$tertiary ;
+            color:  darken($tertiary, 30%) ;
+
+        }
+
+        &__description
+        {
+            display: flex;
+            background-color: $white;
+            margin:0.5rem 1% 0 1% ;
+            height: 22%;
+            width: 98%;
+            border-radius: 0 0 0.5rem 0.5rem ;
+
+            &__like
+            {
+                color: black;
+                font-size: 1.5rem;
+                margin: 0.6rem 0 0 25%;
+            }
+            &__like:hover{
+                .likeHover
+                {
+                    background-color: $primary;
+                }
+            }
+
+            &__text
+            {
+                h2, p
+                {
+                    margin:0 0 0 0.5rem ;
+                }
+
+            }
+
+        }
+    }
+}
+
+
+footer
+{
+    @extend %footer;
+}
+
+/***********   menu fr   ***********/
+
+head{
+    
+}
+img
+{
+    @extend %image;
+}
+
+main{
+
+    .background
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        background-image: url("/assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+
+
+        background-color: lighten($dark-grey, 16%) ;   
+        @include borderRadius('top',2.5rem);
+
+        .title
+        {
+            @extend %title ;
+            width: 90%;
+            padding-top: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Shrikhand' ;            
+        }
+        
+        .menuCard
+        {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            @extend %menuCard;
+
+        }
+
+        button
+        {
+            @extend %btn;
+            width: 60%;
+            margin: 20%;
+        }
+
+
+
+
+    }
+
+    
+
+}
+
+
+
