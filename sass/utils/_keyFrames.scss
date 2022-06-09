@@ -1,0 +1,21 @@
+
+@keyframes rotat {
+
+    0%    { transform: rotate(0deg) }
+    20%   { transform: rotate(.5*36deg) }
+    40%   { transform: rotate(.5*72deg) }
+    60%   { transform: rotate(.5*108deg) }
+    80%   { transform: rotate(.5*144deg) }
+    100%  { transform: rotate(.5*180deg) }
+}
+
+@keyframes easyAppearance {
+    from { 
+        transform: translateY(.5rem);
+        opacity: 0;
+    }
+    to { 
+        transform: translateY(0);
+        opacity: 1;
+    }
+  }

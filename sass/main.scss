@@ -1,17 +1,9 @@
 
-@import './utils/variables';
-@import './utils/extensions';
-@import './utils/mixins';
-@import './base/polices';
-
-/*******************************************
-*
-*Police
-*
-***************************************/
-
-
- 
+    @import './utils/variables';
+    @import './utils/extensions';
+    @import './utils/mixins';
+    @import './base/polices';
+    @import './utils/keyFrames';
 
  *{
     box-sizing: border-box;
@@ -25,33 +17,53 @@
   }
   
 
- 
-header
-{
-    @extend  %alignmentCenter;
-    padding: 1rem;
-    flex-direction: column;
-}
+    header
+    {
+
+        .homeHeader{
+
+            padding: 1rem;
+
+            img{
+                @extend %image ;
+                height: unset;
+            }
+
+        }
+    }
 
 
 .container{
-
-    .positionArea{
-        background-color:lighten($dark-grey, 10%) ;
-        @extend  %alignmentCenter;  
-        padding-left: 30%;
+    .location{
+        width: 100%;
+        background-color:lighten($dark-grey, 8%) ;
         border-top: 0.12rem solid  $dark-grey;
+        @include alignmentCenter(center, center) ;
 
-        .iconPosition
-        {
-            margin-right: 1rem;
+
+
+        .positionArea{
+            width: 8rem;
+            width: 90%;
+            margin-left: 30%;
+            @include displayFlex(flex,row,null);
+            @include alignmentCenter(center, center) ;
+
+    
+            .iconPosition
+            {
+                margin-right: 5%;
+            }
         }
+
     }
+
     
     .services{
 
         flex-direction: column;
-        background-color: lighten($dark-grey, 20%) ;
+        background-color: lighten($dark-grey, 16%) ;
+        
         height: 18rem;
         padding-top: 2rem;
 
@@ -59,7 +71,7 @@ header
         {
             width: 90%;
             margin-left: 5%;
-            @extend  %alignmentCenter;
+            @include alignmentCenter(center, center) ;
         }
 
         h1
@@ -69,13 +81,13 @@ header
         p
         {
             font-family: 'Roboto' ;
-
+            font-weight: normal;
         }
 
         button
         {
             @extend %btn;
-            @extend  %alignmentCenter;
+            @include alignmentCenter(center, center) ;
             width: 60%;
             margin-left: 20%;            
         }
@@ -97,13 +109,13 @@ header
     h1
     {
         @extend %title ;
+        @extend %textOverflow;
     }
    
     &__card 
     {
         @extend %card;
-        @extend %alignmentCenter;
-        @extend %boxShadow  ;        
+        @include alignmentCenter(center, center) ;        
     }
  
     &__id
@@ -121,6 +133,7 @@ header
     {
         font-size: 1.2rem;
         font-weight: bold;
+        @extend %textOverflow;
     }
 
 }
@@ -129,7 +142,7 @@ header
 
 .restaurant
 {
-    background-color: lighten($dark-grey, 20%) ;
+    background-color: lighten($dark-grey, 16%);
     height: 77rem;
     padding-top: 2rem;
 
@@ -137,6 +150,7 @@ header
     h1
     {
         @extend %title ;
+        @extend %textOverflow;
     }
 
 
@@ -147,60 +161,84 @@ header
         margin-left: 5%;
         margin-bottom: 1rem;
         background-color: $white;
-        // Todo Make it simple
-        /*
-        @extend   %borderRadiusTop;
-        @extend   %borderRadiusBottom;*/
         border-radius: 1rem ;
         position: relative;
-
         @extend %boxShadow;
+
+
+        a{
+            text-decoration: none; 
+            color: black;
+        }
 
         &__image
         {
             @extend %image;
             @include borderRadius('top',1rem);
-
-
         }
         &__isNew
         {
+            @include displayFlex(flex,null,space-around);
+            @include alignmentCenter(center,center);
+
+            height: 15%;
+            width: 30%;
             position: absolute;
             top: 5%;
-            left: 75%;
-            padding: 2%;
+            right: 10%;
+            font-size: 1rem;
             font-weight: bold;
-            background-color:$tertiary ;
-            color:  darken($tertiary, 30%) ;
-
+            background-color:$tertiary;
+            color:  darken($tertiary, 30%);
         }
 
         &__description
         {
-            display: flex;
-            background-color: $white;
+            
+            @include displayFlex(flex,null,space-between);
             margin:0.5rem 1% 0 1% ;
             height: 22%;
-            width: 98%;
+            width: 90%;
             border-radius: 0 0 0.5rem 0.5rem ;
 
-            &__like
+            &__like 
             {
-                color: black;
-                font-size: 1.5rem;
-                margin: 0.6rem 0 0 25%;
-            }
-            &__like:hover{
-                .likeHover
+                margin: 0.6rem 0 0 -80%;
+                width: 10%;
+
+                .liked, .unLiked
                 {
-                    background-color: $primary;
+                    color: black;
+                    font-size: 1.5rem;
+                }
+
+                .unLiked{
+                    display: none;
+                }
+
+            }
+    
+            &__like:hover{
+                .liked
+                {
+                    display: none;
+                }
+
+                .unLiked{
+                    display: block;
+                    color: $primary;
+                    animation:translateY 500ms ;
                 }
             }
 
             &__text
             {
+                width: 80%;
+                
                 h2, p
                 {
+                    width: 100%;
+                    @extend %textOverflow;
                     margin:0 0 0 0.5rem ;
                 }
 
@@ -216,66 +254,120 @@ footer
     @extend %footer;
 }
 
-/***********   menu fr   ***********/
+/***********   menu   ***********/
 
-head{
+
+.menu-page-header{
     
-}
-img
-{
-    @extend %image;
+    @include displayFlex(flex,row,null);
+    height: 4rem;
+    width: 90%;
+    background-color: bisque;
+    padding-top: 1rem;
+
+    .fa-arrow-left-position{
+        font-size: 1.5rem;
+        color: darken($dark-grey, 40%);
+    }
+    a{ 
+        margin-left: 8%;
+        margin-right: 5%;
+    }
+
+    img
+    {
+        @extend %image;
+        width: unset;
+        margin-left: 10%;
+        //width: 90%;
+    }
 }
 
 main{
 
-    .background
-    {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        
-        background-image: url("/assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+    .container{
 
-
-        background-color: lighten($dark-grey, 16%) ;   
-        @include borderRadius('top',2.5rem);
-
-        .title
-        {
-            @extend %title ;
-            width: 90%;
-            padding-top: 0.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-family: 'Shrikhand' ;            
-        }
-        
-        .menuCard
-        {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-
-            @extend %menuCard;
+        //background-image: url("/assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+        //background-image: url('./assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg');
+        img{
+            
+            @extend %image;
+            height: 14rem;
+            width: 100%;
 
         }
 
-        button
+        .menuArea
         {
-            @extend %btn;
-            width: 60%;
-            margin: 20%;
-        }
+           
+            background-color: lighten($dark-grey, 16%) ;   
+            @include borderRadius('top',2.5rem);
+            margin-top: -3rem;
+
+            &__title
+            {
+                @extend %title ;
+                width: 90%;
+                padding-top: 0.5rem;
+                @include displayFlex(flex,null,space-between);
+                align-items: center;
+                font-family: 'Shrikhand' ;   
+            }
+            
+            &__menu
+            {
+
+                @extend %menuCard;
+
+                // On hver display selected area
+
+                .menuItem1{
+                    animation: easyAppearance .5s ease-in-out; 
+                }
+                .menuItem2{
+                    animation: easyAppearance 1s ease-in-out; 
+                }
+                .menuItem3{
+                    animation: easyAppearance 1.5s ease-in-out; 
+                }
 
 
 
+                //   On hver display selected area
+                
+                .menuArea__menu__item:hover{
+
+                    .selected{
+                        margin-right: 0;
+                        .rot{
+                         //   animation:rotat 500ms cubic-bezier(.4,.1,.6,.9);
+                        }
+                
+                    }
+                    .desc{
+                        width:60% ;
+                    }
+
+                }
+
+
+                
+            }
+
+            button
+            {
+                @extend %btn;
+                width: 60%;
+                margin: 20%;
+            }
+
+        } 
 
     }
-
-    
-
 }
+
+
+
 
 
 

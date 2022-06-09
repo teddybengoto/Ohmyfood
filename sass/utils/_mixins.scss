@@ -1,7 +1,5 @@
 
-
 @mixin borderRadius ($posi,$val) {
-
 
     @if ($posi=='bottom'){
         border-radius: 0 0 $val $val  ;
@@ -12,6 +10,29 @@
     @if($posi=='both'){
         border-radius: $val $val $val $val  ;
     }
+    @if($posi=='right'){
+        border-radius: 0 $val $val 0  ;
+    }
     
 }
+
+@mixin boxShadow($col,$val)
+{
+   box-shadow: $val $val $val $val $col ;
+}
+
+@mixin displayFlex($disp, $flexDir, $justifyCont)
+{
+
+   display: $disp;
+   flex-direction: $flexDir;
+   justify-content: $justifyCont;
+}
+
+@mixin alignmentCenter ($item,$text)
+{
+  align-items: $item;
+  text-align: $text;
+}
+
 
