@@ -15,6 +15,13 @@
     text-overflow: ellipsis;
 
 }
+
+%textPolice{
+    font-weight: 100;
+    font-family: 'Roboto';
+
+}
+
 %id
 {
    height: 1.5rem;
@@ -62,14 +69,13 @@
 
 %boxShadow
 {
-   box-shadow: 0.1rem 0.1rem 0.1rem  0.1rem $dark-grey ;
+  box-shadow: 0.12rem 0.12rem 0.12rem  0.12rem $dark-grey ;
 }
 
 %title
 {
    margin-left: 5%;
-   font-size: 1.5rem;
-   font-weight: bold;
+   font-size: 1.4rem;
    font-family: 'Roboto';
    width: 90%;
    
@@ -84,18 +90,14 @@
    font-weight: bold;
    font-size: 1rem;
    padding-left: 3%;
-   background: linear-gradient(to bottom right,$secondary 1%, $primary 99% );
-   
-   &:hover{
-     background: brightness(95%);
-   }
-
+   background: linear-gradient(to bottom right,$secondary 1%, $primary 99% );         
+   @extend %boxShadow;
 }
 
 %image
 {  
-    height: 100%;
-    width: 80%;
+    height: 70%;
+    width: 100%;
     color: black;
     object-fit:cover;
     margin-bottom: 0;
@@ -138,11 +140,20 @@
 
 }
 
+/*%loader {
+    border: .2rem solid #f3f3f3; // Light grey 
+    border-top: .2rem solid $primary; // Blue /
+    border-radius: 50%;
+    width: 8rem;
+    height:8rem;
+    //animation: translateY 1s linear infinite;
+
+  }   */
+
 
 %menuCard
 {
     width: 100%;
-
 
     .menuArea__menu__title
     {
@@ -154,8 +165,7 @@
             font-family: 'Robot';
             font-weight:100 ;
             text-transform: uppercase;
-            @extend %title ;
-           
+            @extend %title ;           
         }
 
         span
@@ -163,11 +173,12 @@
 
             font-size: 7rem;
             margin-top: -7.5rem;
+            margin-bottom: 0;
+
             color: $tertiary;
             text-decoration-line: underline;
             text-decoration-thickness: 0.2rem; 
-            @extend %title ;
-  
+            @extend %title ;              
         }
 
     }
@@ -178,7 +189,7 @@
         width: 90%;
 
         margin: 1rem 0 0 5%;
-        padding: 0.1% 0 0 3%;
+        padding: 0 0 0 3%;
 
         @include borderRadius('both',1rem);
         background-color: white;
@@ -218,10 +229,10 @@
 
             .descPrice{
                 width: 10%;
-                text-align: right;
                 margin-top: 1.9rem;
                 font-weight: bold;
                 margin-right: 0.5rem;
+                @include alignmentCenter(null, right) ;
 
             }
             
@@ -233,24 +244,27 @@
                 @include borderRadius('right',1rem);
                 background-color: $tertiary;
                 margin-right: -20%;
-                margin-top: -.1rem;
                 transition: all 500ms ease-in-out;              
                 color: white;
-                text-align: center;
+                @include alignmentCenter(null, center) ;
                 @include boxShadow ((lighten($dark-grey, 8%)),0.009rem);
 
-
                 i{
+                    
                     font-size: 1.8rem;
                     margin-top: 1.5rem;
                 }  
+
+                .rot
+                {
+                    transition: all 600ms ease-in-out;              
+                }
 
             }
             
         }
 
     }
-
 }
 
 

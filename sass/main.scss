@@ -22,9 +22,12 @@
 
         .homeHeader{
 
-            padding: 1rem;
+            width: 80%;
+            height: 5rem;
 
             img{
+                margin-left: 10%;
+                margin-top: 1rem;
                 @extend %image ;
                 height: unset;
             }
@@ -34,13 +37,45 @@
 
 
 .container{
+
+
+      /*.loadingArea{
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index:999;
+
+        @include displayFlex(flex,null,space-around);
+        align-items: center;
+        height: 100%;
+        width: 90%;
+        background-color: white;
+        opacity: 0;
+        transform-origin: top left;
+        animation: opac 3s ease-in-out ;
+
+
+        .loader {
+        
+            border: .5rem solid white;  
+            border-top: .5rem solid $primary; 
+            border-radius: 50%;
+            width: 10rem;
+            height:10rem;
+            background-color: blueviolets;
+            opacity: 0;
+            animation: spin 4s linear ;
+        }
+
+      }  */
+
     .location{
         width: 100%;
         background-color:lighten($dark-grey, 8%) ;
         border-top: 0.12rem solid  $dark-grey;
         @include alignmentCenter(center, center) ;
-
-
+        color: black;
+        @extend %textPolice;
 
         .positionArea{
             width: 8rem;
@@ -62,7 +97,7 @@
     .services{
 
         flex-direction: column;
-        background-color: lighten($dark-grey, 16%) ;
+        background-color: lighten($dark-grey, 16%);
         
         height: 18rem;
         padding-top: 2rem;
@@ -71,7 +106,7 @@
         {
             width: 90%;
             margin-left: 5%;
-            @include alignmentCenter(center, center) ;
+            @include alignmentCenter(center, center);
         }
 
         h1
@@ -80,16 +115,21 @@
         }
         p
         {
-            font-family: 'Roboto' ;
-            font-weight: normal;
+            @extend %textPolice;
         }
 
         button
         {
+            width: 60%;
+            margin-left: 20%;   
             @extend %btn;
             @include alignmentCenter(center, center) ;
-            width: 60%;
-            margin-left: 20%;            
+            @extend %boxShadow;
+            transition: all 500ms ease-in-out;  
+
+            &:hover{
+                filter: brightness(120%) ;              
+              }
         }
 
     }
@@ -131,9 +171,9 @@
 
     &__title
     {
-        font-size: 1.2rem;
-        font-weight: bold;
+        @extend %textPolice;
         @extend %textOverflow;
+        font-weight: bold;
     }
 
 }
@@ -204,30 +244,31 @@
             &__like 
             {
                 margin: 0.6rem 0 0 -80%;
-                width: 10%;
+                text-align: right;
 
                 .liked, .unLiked
                 {
                     color: black;
                     font-size: 1.5rem;
+                    position: relative;
                 }
 
                 .unLiked{
-                    display: none;
+                    transform-origin: center bottom;
+                    transition: transform 500ms ease-in-out;  
+                    transform: scale(0);
+                    color: $primary;            
+                }
+                .liked{
+                    left:1.7rem;
                 }
 
             }
     
             &__like:hover{
-                .liked
-                {
-                    display: none;
-                }
 
                 .unLiked{
-                    display: block;
-                    color: $primary;
-                    animation:translateY 500ms ;
+                    transform: scale(1);
                 }
             }
 
@@ -240,6 +281,15 @@
                     width: 100%;
                     @extend %textOverflow;
                     margin:0 0 0 0.5rem ;
+                }
+                h2{
+                    @extend %title ;
+
+                }
+                p{
+                    margin-top: .3rem;
+                    @extend %textPolice ;
+                    font-weight: 350;
                 }
 
             }
@@ -259,42 +309,44 @@ footer
 
 .menu-page-header{
     
-    @include displayFlex(flex,row,null);
-    height: 4rem;
+    @include displayFlex(flex,null,null);
+    align-items: center;
+    
+    height: 5rem;
     width: 90%;
-    background-color: bisque;
+    margin-left: 5%;
     padding-top: 1rem;
 
     .fa-arrow-left-position{
         font-size: 1.5rem;
-        color: darken($dark-grey, 40%);
+        color: darken($dark-grey, 80%);
     }
     a{ 
         margin-left: 8%;
         margin-right: 5%;
+        width: 10%;
     }
-
-    img
-    {
-        @extend %image;
-        width: unset;
-        margin-left: 10%;
-        //width: 90%;
+    p{
+        margin-left: 5%;
+        font-size: 2rem;
+        font-family: 'Roboto';
+        width: 80%;
+        font-family: 'Shrikhand';
     }
+  
 }
 
 main{
 
     .container{
 
-        //background-image: url("/assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
-        //background-image: url('./assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg');
-        img{
-            
-            @extend %image;
-            height: 14rem;
+        .restaurantImage{
+            background-image: url("../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
             width: 100%;
-
+            height: 14rem;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            object-fit:cover;
         }
 
         .menuArea
@@ -313,7 +365,17 @@ main{
                 align-items: center;
                 font-family: 'Shrikhand' ;   
             }
-            
+
+            &__1{
+                animation: easyAppearance 1s ease-in-out; 
+            }
+            &__2{
+                animation: easyAppearance 2s ease-in-out; 
+            }
+            &__3{
+                animation: easyAppearance 3s ease-in-out; 
+            }
+
             &__menu
             {
 
@@ -331,8 +393,6 @@ main{
                     animation: easyAppearance 1.5s ease-in-out; 
                 }
 
-
-
                 //   On hver display selected area
                 
                 .menuArea__menu__item:hover{
@@ -340,7 +400,7 @@ main{
                     .selected{
                         margin-right: 0;
                         .rot{
-                         //   animation:rotat 500ms cubic-bezier(.4,.1,.6,.9);
+                            transform: rotate(360deg);
                         }
                 
                     }
@@ -349,8 +409,6 @@ main{
                     }
 
                 }
-
-
                 
             }
 
@@ -359,6 +417,12 @@ main{
                 @extend %btn;
                 width: 60%;
                 margin: 20%;
+                transition: all 500ms ease-in-out;  
+
+                &:hover{
+                    filter: brightness(120%);              
+                }
+
             }
 
         } 
