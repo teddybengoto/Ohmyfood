@@ -1,0 +1,28 @@
+%loadingArea{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index:999;
+
+    @include displayFlex(flex,null,space-around);
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    opacity: 0;
+    transform-origin: top left;
+    animation: opac 3s ease-in-out ;
+
+
+    .loader {
+    
+        border: .5rem solid white;  
+        border-top: .5rem solid $primary; 
+        border-radius: 50%;
+        width: 10rem;
+        height:10rem;
+        background-color: blueviolets;
+        opacity: 0;
+        animation: spin 3s linear ;
+    }
+}

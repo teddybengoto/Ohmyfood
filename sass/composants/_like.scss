@@ -1,0 +1,23 @@
+%like{
+    margin: 0.6rem 0 0 -80%;
+    text-align: right;
+
+    .liked, .unLiked
+    {
+        color: black;
+        font-size: 1.5rem;
+        position: relative;
+    }
+
+    .unLiked{
+
+        transform-origin: center bottom;
+        transition: transform 500ms ease-in-out;  
+        transform: scale(0);
+        color: $primary; 
+        margin-left: -1.5%;       
+    }
+    .liked{
+        left:1.7rem;
+    }
+}

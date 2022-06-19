@@ -1,0 +1,23 @@
+%services{
+
+    flex-direction: column;
+    background-color: lighten($dark-grey, 16%);
+    height: 18rem;
+    padding-top: 2rem;
+
+    h1,p
+    {
+        width: 90%;
+        margin-left: 5%;
+        @include alignmentCenter(center, center);
+    }
+
+    h1
+    {
+        @extend %title;
+    }
+    p
+    {
+        @extend %textPolice;
+    }
+}

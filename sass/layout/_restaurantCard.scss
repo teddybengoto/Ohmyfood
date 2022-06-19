@@ -1,0 +1,12 @@
+%restaurantCard
+{
+    
+    height: 16rem;
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 1rem;
+    background-color: $white;
+    border-radius: 1rem ;
+    position: relative;
+    @extend %boxShadow;
+}

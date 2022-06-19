@@ -1,0 +1,115 @@
+%menuCard
+{
+    width: 100%;
+
+    .menuArea__menu__title
+    {
+        
+        @include displayFlex(flex,column,null);
+
+        h1{
+            
+            font-family: 'Robot';
+            font-weight:100 ;
+            text-transform: uppercase;
+            @extend %title ;           
+        }
+
+        span
+        {
+
+            font-size: 7rem;
+            margin-top: -7.5rem;
+            margin-bottom: 0;
+
+            color: $tertiary;
+            text-decoration-line: underline;
+            text-decoration-thickness: 0.2rem; 
+            @extend %title ;              
+        }
+
+    }
+    
+    .menuArea__menu__item{
+
+        height: 5rem;
+        width: 90%;
+
+        margin: 1rem 0 0 5%;
+        padding: 0 0 0 3%;
+
+        @include borderRadius('both',1rem);
+        background-color: white;
+        @include boxShadow ((lighten($dark-grey, 8%)),0.009rem);
+        display: flex;
+     
+        .descPriceSelected{
+
+            @include displayFlex(flex,row,space-between);
+            @include alignmentCenter(center, null) ;
+
+            overflow-x: hidden;
+            width: 100%;
+
+            .desc{
+                height: 70%;
+                width: 70%;
+                transition: all 500ms ease-in-out;              
+
+
+                h2{
+                    @extend %textOverflow;
+                    font-size: 1rem;
+                    font-family: 'Roboto';
+                    margin-top: .1rem;
+                }
+
+                p{
+                    @extend %textOverflow;
+                    max-width: 100%;
+                    font-family: 'Roboto';
+                    font-weight:100;
+                    margin-top: -.3rem;
+                    color: black;
+                }
+            }
+
+            .descPrice{
+                width: 10%;
+                margin-top: 1.9rem;
+                font-weight: bold;
+                margin-right: 0.5rem;
+                @include alignmentCenter(null, right) ;
+
+            }
+            
+
+            .selected{
+
+                width: 20%;
+                height: 100%;
+                @include borderRadius('right',1rem);
+                background-color: $tertiary;
+                margin-right: -20%;
+                transition: all 500ms ease-in-out;              
+                color: white;
+                @include alignmentCenter(null, center) ;
+                @include boxShadow ((lighten($dark-grey, 8%)),0.009rem);
+
+                i{
+                    
+                    font-size: 1.8rem;
+                    margin-top: 1.5rem;
+                }  
+
+                .rot
+                {
+                    transition: all 600ms ease-in-out;              
+                }
+
+            }
+            
+        }
+
+    }
+}

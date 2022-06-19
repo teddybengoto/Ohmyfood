@@ -1,9 +1,31 @@
-
+    //utils
     @import './utils/variables';
     @import './utils/extensions';
     @import './utils/mixins';
     @import './base/polices';
     @import './utils/keyFrames';
+    
+    // Layout
+    @import './layout/menuHeader';
+    @import './layout/homeHeader';
+    @import './layout/footer';
+    @import 'layout/restaurantCard';
+    @import 'layout/fonctionnalities';
+    @import 'layout/restaurant';
+
+    // composants
+    @import './composants/button';
+    @import './composants/card';
+    @import './composants/loading';
+    @import './composants/menuCard';
+    @import './composants/like';
+    @import './composants/isNew';
+    @import './composants/services';
+    @import './composants/location';
+    @import './composants/image';
+    @import './composants/id';
+    @import './composants/icon';
+
 
  *{
     box-sizing: border-box;
@@ -19,119 +41,41 @@
 
     header
     {
+        .menu-page-header{
+            @extend %menuHeader;              
+        }
 
         .homeHeader{
-
-            width: 80%;
-            height: 5rem;
-
-            img{
-                margin-left: 10%;
-                margin-top: 1rem;
-                @extend %image ;
-                height: unset;
-            }
-
-        }
+            @extend %homeHeader;
+        }        
     }
 
 
 .container{
 
-
-      /*.loadingArea{
-        position: absolute;
-        left: 0px;
-        top: 0px;
-        z-index:999;
-
-        @include displayFlex(flex,null,space-around);
-        align-items: center;
-        height: 100%;
-        width: 90%;
-        background-color: white;
-        opacity: 0;
-        transform-origin: top left;
-        animation: opac 3s ease-in-out ;
+    margin: 0;
+    padding: 0;
 
 
-        .loader {
-        
-            border: .5rem solid white;  
-            border-top: .5rem solid $primary; 
-            border-radius: 50%;
-            width: 10rem;
-            height:10rem;
-            background-color: blueviolets;
-            opacity: 0;
-            animation: spin 4s linear ;
-        }
-
-      }  */
+    .loadingArea{
+        @extend %loadingArea;
+    }  
 
     .location{
-        width: 100%;
-        background-color:lighten($dark-grey, 8%) ;
-        border-top: 0.12rem solid  $dark-grey;
-        @include alignmentCenter(center, center) ;
-        color: black;
-        @extend %textPolice;
-
-        .positionArea{
-            width: 8rem;
-            width: 90%;
-            margin-left: 30%;
-            @include displayFlex(flex,row,null);
-            @include alignmentCenter(center, center) ;
-
-    
-            .iconPosition
-            {
-                margin-right: 5%;
-            }
-        }
-
+        @extend %location;
     }
 
-    
     .services{
 
-        flex-direction: column;
-        background-color: lighten($dark-grey, 16%);
-        
-        height: 18rem;
-        padding-top: 2rem;
-
-        h1, p
-        {
-            width: 90%;
-            margin-left: 5%;
-            @include alignmentCenter(center, center);
-        }
-
-        h1
-        {
-            @extend %title;
-        }
-        p
-        {
-            @extend %textPolice;
-        }
-
+        @extend %services;
         button
         {
-            width: 60%;
-            margin-left: 20%;   
-            @extend %btn;
-            @include alignmentCenter(center, center) ;
-            @extend %boxShadow;
-            transition: all 500ms ease-in-out;  
+            @extend %button;
+            margin-top: 5%;
 
-            &:hover{
-                filter: brightness(120%) ;              
-              }
+            
+
         }
-
     }
 
 }
@@ -141,10 +85,8 @@
 
 .fonctionnalities
 {
-    width: 100%;
-    height: 28rem;
-    padding-top: 2rem;
-    background-color: $white;
+
+    @extend %fonctionnalities;
 
     h1
     {
@@ -182,10 +124,7 @@
 
 .restaurant
 {
-    background-color: lighten($dark-grey, 16%);
-    height: 77rem;
-    padding-top: 2rem;
-
+    @extend %restaurant;
 
     h1
     {
@@ -196,16 +135,8 @@
 
     .restaurantCard
     {
-        height: 16rem;
-        width: 90%;
-        margin-left: 5%;
-        margin-bottom: 1rem;
-        background-color: $white;
-        border-radius: 1rem ;
-        position: relative;
-        @extend %boxShadow;
-
-
+        @extend %restaurantCard;
+        
         a{
             text-decoration: none; 
             color: black;
@@ -218,18 +149,7 @@
         }
         &__isNew
         {
-            @include displayFlex(flex,null,space-around);
-            @include alignmentCenter(center,center);
-
-            height: 15%;
-            width: 30%;
-            position: absolute;
-            top: 5%;
-            right: 10%;
-            font-size: 1rem;
-            font-weight: bold;
-            background-color:$tertiary;
-            color:  darken($tertiary, 30%);
+            @extend %isNew;
         }
 
         &__description
@@ -241,28 +161,8 @@
             width: 90%;
             border-radius: 0 0 0.5rem 0.5rem ;
 
-            &__like 
-            {
-                margin: 0.6rem 0 0 -80%;
-                text-align: right;
-
-                .liked, .unLiked
-                {
-                    color: black;
-                    font-size: 1.5rem;
-                    position: relative;
-                }
-
-                .unLiked{
-                    transform-origin: center bottom;
-                    transition: transform 500ms ease-in-out;  
-                    transform: scale(0);
-                    color: $primary;            
-                }
-                .liked{
-                    left:1.7rem;
-                }
-
+            &__like {
+                @extend %like; 
             }
     
             &__like:hover{
@@ -270,6 +170,7 @@
                 .unLiked{
                     transform: scale(1);
                 }
+
             }
 
             &__text
@@ -299,137 +200,93 @@
 }
 
 
+.restaurantImage{
+    @extend %restaurant-page-background-image;
+}
+
+.menuArea
+{
+    
+    background-color: lighten($dark-grey, 16%) ;   
+    @include borderRadius('top',2.5rem);
+    margin-top: -3rem;
+
+    &__title
+    {
+        @extend %title ;
+        width: 90%;
+        padding-top: 0.5rem;
+        @include displayFlex(flex,null,space-between);
+        align-items: center;
+        font-family: 'Shrikhand' ;   
+    }
+
+    &__1{
+        animation: easyAppearance 1s ease-in-out; 
+    }
+    &__2{
+        animation: easyAppearance 2s ease-in-out; 
+    }
+    &__3{
+        animation: easyAppearance 3s ease-in-out; 
+    }
+
+    &__menu
+    {
+
+        @extend %menuCard;
+
+        // On hver display selected area
+
+        .menuItem1{
+            animation: easyAppearance .5s ease-in-out; 
+        }
+        .menuItem2{
+            animation: easyAppearance 1s ease-in-out; 
+        }
+        .menuItem3{
+            animation: easyAppearance 1.5s ease-in-out; 
+        }
+
+        //   On hver display selected area
+        
+        .menuArea__menu__item:hover{
+
+            .selected{
+                margin-right: 0;
+                .rot{
+                    transform: rotate(360deg);
+                }
+        
+            }
+            .desc{
+                width:60% ;
+            }
+
+        }
+        
+    }
+
+    button
+    {
+        @extend %button;
+        width: 60%;
+        margin: 20%;
+        transition: all 500ms ease-in-out;  
+
+        &:hover{
+            filter: brightness(120%);              
+        }
+
+    }
+
+} 
+
+
 footer
 {
     @extend %footer;
 }
-
-/***********   menu   ***********/
-
-
-.menu-page-header{
-    
-    @include displayFlex(flex,null,null);
-    align-items: center;
-    
-    height: 5rem;
-    width: 90%;
-    margin-left: 5%;
-    padding-top: 1rem;
-
-    .fa-arrow-left-position{
-        font-size: 1.5rem;
-        color: darken($dark-grey, 80%);
-    }
-    a{ 
-        margin-left: 8%;
-        margin-right: 5%;
-        width: 10%;
-    }
-    p{
-        margin-left: 5%;
-        font-size: 2rem;
-        font-family: 'Roboto';
-        width: 80%;
-        font-family: 'Shrikhand';
-    }
-  
-}
-
-main{
-
-    .container{
-
-        .restaurantImage{
-            background-image: url("../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
-            width: 100%;
-            height: 14rem;
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
-            object-fit:cover;
-        }
-
-        .menuArea
-        {
-           
-            background-color: lighten($dark-grey, 16%) ;   
-            @include borderRadius('top',2.5rem);
-            margin-top: -3rem;
-
-            &__title
-            {
-                @extend %title ;
-                width: 90%;
-                padding-top: 0.5rem;
-                @include displayFlex(flex,null,space-between);
-                align-items: center;
-                font-family: 'Shrikhand' ;   
-            }
-
-            &__1{
-                animation: easyAppearance 1s ease-in-out; 
-            }
-            &__2{
-                animation: easyAppearance 2s ease-in-out; 
-            }
-            &__3{
-                animation: easyAppearance 3s ease-in-out; 
-            }
-
-            &__menu
-            {
-
-                @extend %menuCard;
-
-                // On hver display selected area
-
-                .menuItem1{
-                    animation: easyAppearance .5s ease-in-out; 
-                }
-                .menuItem2{
-                    animation: easyAppearance 1s ease-in-out; 
-                }
-                .menuItem3{
-                    animation: easyAppearance 1.5s ease-in-out; 
-                }
-
-                //   On hver display selected area
-                
-                .menuArea__menu__item:hover{
-
-                    .selected{
-                        margin-right: 0;
-                        .rot{
-                            transform: rotate(360deg);
-                        }
-                
-                    }
-                    .desc{
-                        width:60% ;
-                    }
-
-                }
-                
-            }
-
-            button
-            {
-                @extend %btn;
-                width: 60%;
-                margin: 20%;
-                transition: all 500ms ease-in-out;  
-
-                &:hover{
-                    filter: brightness(120%);              
-                }
-
-            }
-
-        } 
-
-    }
-}
-
 
 
 

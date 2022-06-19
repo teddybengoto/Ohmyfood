@@ -1,0 +1,16 @@
+
+%isNew
+{
+    @include displayFlex(flex,null,space-around);
+    @include alignmentCenter(center,center);
+
+    height: 15%;
+    width: 30%;
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color:$tertiary;
+    color:  darken($tertiary, 30%);
+}
