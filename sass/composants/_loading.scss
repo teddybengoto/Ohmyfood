@@ -2,7 +2,7 @@
     position: absolute;
     left: 0px;
     top: 0px;
-    z-index:999;
+    z-index:-1;
 
     @include displayFlex(flex,null,space-around);
     align-items: center;
@@ -22,7 +22,7 @@
         width: 10rem;
         height:10rem;
         background-color: blueviolets;
-        opacity: 0;
+        //opacity: 0;
         animation: spin 3s linear ;
     }
 }

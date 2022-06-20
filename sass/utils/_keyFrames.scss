@@ -2,11 +2,10 @@
 @keyframes opac {
     0% { 
         opacity: 1;
-        //transform: rotate(0deg);
-    }
+        z-index: 999;   
+     }
     100% { 
         opacity: 0;
-        //transform: rotate(360deg);
         z-index: -1;
      }
     
@@ -29,7 +28,7 @@
   @keyframes spin {
     0% { 
         transform: rotate(1turn); 
-        opacity: 1;
+        //opacity: 1;
     }
     25% { 
         transform: rotate(2turn); 
@@ -42,11 +41,12 @@
         transform: rotate(4turn); 
 
     }
+    99%{
+      //  z-index: 999;   
+    }
     100% { 
         transform: rotate(5turn);
-        opacity: 1;
-        z-index: -1;
-
-    
+      //  opacity: 1;
+     //   z-index: -1;    
     }
   }

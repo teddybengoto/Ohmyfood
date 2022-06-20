@@ -18,7 +18,8 @@
 
 @mixin boxShadow($col,$val)
 {
-   box-shadow: $val $val $val $val $col ;
+   //box-shadow: $val $val $val $val $col ;
+   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 @mixin displayFlex($disp, $flexDir, $justifyCont)
