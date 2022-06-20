@@ -56,30 +56,25 @@
     margin: 0;
     padding: 0;
 
-
-    .loadingArea{
-        @extend %loadingArea;
-    }  
-
-    .location{
-        @extend %location;
-    }
-
-    .services{
-
-        @extend %services;
-        button
-        {
-            @extend %button;
-            margin-top: 5%;
-
-            
-
-        }
-    }
-
 }
 
+.loadingArea{
+    @extend %loadingArea;
+}  
+
+.location{
+    @extend %location;
+}
+
+.services{
+
+    @extend %services;
+    button
+    {
+        @extend %button;
+        margin-top: 5%;
+    }
+}
 
 
 
