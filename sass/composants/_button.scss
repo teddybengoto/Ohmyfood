@@ -11,11 +11,15 @@
    font-size: 1rem;
    padding-left: 3%;
    background: linear-gradient(to bottom right,$secondary 1%, $primary 99% );         
-   @extend %boxShadow;
+   //@extend %boxShadow;
+   box-shadow: 0.06rem 0.06rem 0.06rem  0.06rem $dark-grey ;
    transition: all 500ms ease-in-out;  
+   transition: box-shadow 500ms ease-in-out;
 
 
    &:hover{
-      filter: brightness(120%) ;              
+      filter: brightness(120%) ;
+      box-shadow: 0.12rem 0.12rem 0.12rem  0.12rem $dark-grey ;
+              
    }
 }
