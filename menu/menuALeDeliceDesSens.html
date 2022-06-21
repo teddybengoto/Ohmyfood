@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,900i" rel="stylesheet">
-    <link rel="stylesheet" href="./public/css/style.css">
+    <link rel="stylesheet" href="../public/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <title>Ohmyfood</title>
-    <link rel="shortcut icon" href="./assets/images/logo/ohmyfood@2x.svg" title="image/x-icon">
+    <link rel="shortcut icon" href="../assets/images/logo/ohmyfood@2x.svg" title="image/x-icon">
 
 </head>
 
@@ -18,7 +18,7 @@
 
     <header>
         <div class="menu-page-header">
-            <a href="./index.html"><i class="fa-solid fa-arrow-left fa-arrow-left-position"></i></a>            
+            <a href="../index.html"><i class="fa-solid fa-arrow-left fa-arrow-left-position"></i></a>            
             <p>ohmyfood</p>
         </div>
     </header>
@@ -28,17 +28,18 @@
         <section class="container">
 
             
-            <div class="restaurantImage"></div>
+            <div class="restaurantImage"> </div>
                       
+            
             <article class="menuArea">
 
                 <div class="menuArea__title">
-                    <h1> La palette du goût</h1>
-                    <i class="fa-regular fa-heart likeHover"></i>
-                </div>
-                
-                <!--Entrées-->
-                
+                    <h1>Le délice des sens</h1>
+                    <div class="menuArea__title__like">      
+                        <i class="fa-regular fa-heart liked"></i>
+                        <i class="fa-solid fa-heart unLiked"></i>                                
+                    </div>                </div>
+
                 <div class="menuArea__menu menuArea__1">
 
                     <div class="menuArea__menu__title">
@@ -46,11 +47,11 @@
                         <span>&nbsp;</span>
                     </div>
        
-                    <div class="menuArea__menu__item mmenuItem1">
-                        <div class="descPriceSelected">
+                    <div class="menuArea__menu__item mmenuItem1">        
+                       <div class="descPriceSelected">
                             <div class="desc">
-                                <h2>Fricassée d'escargot</h2>
-                                <p>Au piment d'Espelette</p>          
+                                <h2>Tartare de thon</h2>
+                                <p>Assaisonné au yuzu</p>          
                             </div>
                             
                             <div class="descPrice">25€</div>  
@@ -60,11 +61,10 @@
                         </div>                           
                     </div>
                     <div class="menuArea__menu__item menuItem2">
-
                         <div class="descPriceSelected">
                             <div class="desc">
-                                <h2>Foie gras de canard mi-cuit</h2>
-                                <p>Et ses copeaux de truffe noire</p>
+                                <h2>Bouchée de homard croustillant</h2>
+                                <p>Et sa farandole de petits légumes</p>
                             </div> 
                             <div class="descPrice">35€</div>  
                             <div class="selected">
@@ -76,8 +76,8 @@
                     <div class="menuArea__menu__item menuItem3">
                         <div class="descPriceSelected">
                             <div class="desc">
-                                <h2>Oeuf au plat</h2>
-                                <p>Assaisonné à la truffe sur lit de caviar</p>          
+                                <h2>Velouté de cèpes</h2>
+                                <p>Aux truffes</p>          
                             </div>
                             <div class="descPrice">20€</div>  
                             <div class="selected">
@@ -89,6 +89,7 @@
 
                 </div>
                 
+
                 <!--Plats -->
 
                 <div class="menuArea__menu menuArea__2">
@@ -96,14 +97,13 @@
                     <div class="menuArea__menu__title">
                         <h1>Plats</h1>
                         <span>&nbsp;</span>
-                    </div>
-       
+                    </div>       
                     <div class="menuArea__menu__item menuItem1">
                         
                         <div class="descPriceSelected">
                             <div class="desc">
-                                <h2>Filet de boeuf aux herbes</h2>
-                                <p>Accompagné de sa ribambelle de légumes</p>          
+                                <h2>Poulet rôti aux herbes de Provence </h2>
+                                <p>Et sa crème de truffe</p>          
                             </div>
                             
                             <div class="descPrice">40€</div>  
@@ -118,8 +118,8 @@
 
                         <div class="descPriceSelected">
                             <div class="desc">
-                                <h2>Parmentier de queue de boeuf</h2>
-                                <p>À la truffe noire sur sa purée de panais</p>
+                                <h2>Langouste rôtie </h2>
+                                <p>Et ses légumes de saison</p>
                             </div>
                             
                             <div class="descPrice">35€</div>  
@@ -134,8 +134,8 @@
 
                         <div class="descPriceSelected">
                             <div class="desc">
-                                <h2>Filet de turbot</h2>
-                                <p>Aux agrume</p>
+                                <h2>Côte de boeuf Angus </h2>
+                                <p>Et sa purée de panais</p>
                             </div>
                             
                             <div class="descPrice">44€</div>  
@@ -158,11 +158,10 @@
                     </div>
        
                     <div class="menuArea__menu__item menuArea__menu__3__1">
-
                         <div class="descPriceSelected">
                             <div class="desc">
-                                <h2>Paris-Brest</h2>
-                                <p>Revisité</p>
+                                <h2>Farandole de desserts</h2>
+                                <p>Du chef</p>
                             </div>
                             
                             <div class="descPrice">18€</div>  
@@ -177,8 +176,8 @@
 
                         <div class="descPriceSelected">
                             <div class="desc">
-                                <h2>Macaron au chocolat d'exception </h2>
-                                <p>Et glace à la vanille de Madagascar</p>
+                                <h2>Crème brulée</h2>
+                                <p>Revisité</p>
                             </div>
                             
                             <div class="descPrice">22€</div>  
@@ -194,8 +193,8 @@
 
                         <div class="descPriceSelected">
                             <div class="desc">
-                                <h2>Mousse au chocolat</h2>
-                                <p>Au piment d'Espelette et à la truffe noire</p>
+                                <h2>Tiramisu </h2>
+                                <p>À la noisette</p>
                             </div>
                             
                             <div class="descPrice">23€</div>  

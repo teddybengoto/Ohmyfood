@@ -213,7 +213,20 @@
         padding-top: 0.5rem;
         @include displayFlex(flex,null,space-between);
         align-items: center;
-        font-family: 'Shrikhand' ;   
+        font-family: 'Shrikhand' ; 
+       
+        &__like {
+            @extend %like; 
+        }
+
+        &__like:hover{
+
+            .unLiked{
+                transform: scale(1);
+            }
+
+        }
+        
     }
 
     &__1{

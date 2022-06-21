@@ -1,24 +1,22 @@
 %location{
 
-
     width: 100%;
     background-color:lighten($dark-grey, 8%) ;
     border-top: 0.12rem solid  $dark-grey;
     color: black;
-    @include alignmentCenter(center, center) ;
-    @extend %textPolice;
 
-    .positionArea{
-        width: 8rem;
+    form{
+        height: 3rem;
         width: 75%;
         margin-left: 25%;
         @include displayFlex(flex,row,null);
         @include alignmentCenter(center, center) ;
 
-
-        .iconPosition
-        {
-            margin-right: 5%;
+        input{
+            margin-left: 5%;
+            border: none;
+            background-color:lighten($dark-grey, 8%) ;
+            @extend %textPolice;
         }
     }
 }
