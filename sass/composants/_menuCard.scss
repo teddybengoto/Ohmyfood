@@ -81,8 +81,7 @@
                 font-weight: bold;
                 margin-right: 0.5rem;
                 @include alignmentCenter(null, right) ;
-                @extend %textPolice;        
-
+                @extend %textPolice;    
 
             }
             

@@ -3,6 +3,8 @@
 {
     @include displayFlex(flex,null,space-around);
     @include alignmentCenter(center,center);
+    @extend %textPolice;        
+
 
     height: 15%;
     width: 30%;

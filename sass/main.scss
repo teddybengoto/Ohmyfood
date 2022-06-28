@@ -298,5 +298,30 @@ footer
 
 
 
+@media screen and (min-width: 768px)
+{
+
+    body{
+        width: 50%;
+        margin-left: 25%;
+    }
+    header
+    {
+        /*.menu-page-header{
+            @extend %menuHeader;              
+        }
+
+        *.homeHeader{
+            @extend %homeHeader;
+        } */       
+    }
+
+    .fonctionnalities{
+        background-color:lighten($dark-grey, 8%) ;
+
+    }
+
+}
+
 
 

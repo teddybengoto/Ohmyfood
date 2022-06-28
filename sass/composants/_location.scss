@@ -1,14 +1,15 @@
 %location{
 
     width: 100%;
+    display: flex;
+    justify-content: center;
     background-color:lighten($dark-grey, 8%) ;
     border-top: 0.12rem solid  $dark-grey;
     color: black;
 
+
     form{
         height: 3rem;
-        width: 75%;
-        margin-left: 25%;
         @include displayFlex(flex,row,null);
         @include alignmentCenter(center, center) ;
 
