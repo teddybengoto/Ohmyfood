@@ -15,7 +15,7 @@
 
     // composants
     @import './composants/button';
-    @import './composants/card';
+    @import './composants/functionCard';
     @import './composants/loading';
     @import './composants/menuCard';
     @import './composants/like';
@@ -83,15 +83,9 @@
 
     @extend %fonctionnalities;
 
-    h1
-    {
-        @extend %title ;
-        @extend %textOverflow;
-    }
-   
     &__card 
     {
-        @extend %card;
+        @extend %functionCard;
         @include alignmentCenter(center, center) ;        
     }
  
@@ -114,8 +108,6 @@
     }
 
 }
-
-
 
 .restaurant
 {
@@ -189,7 +181,6 @@
                 }
 
             }
-
         }
     }
 }
@@ -210,7 +201,6 @@
     {
         @extend %title ;
         width: 90%;
-        padding-top: 0.5rem;
         @include displayFlex(flex,null,space-between);
         align-items: center;
         font-family: 'Shrikhand' ; 
@@ -251,6 +241,7 @@
         }
         .menuItem2{
             animation: easyAppearance 1s ease-in-out; 
+
         }
         .menuItem3{
             animation: easyAppearance 1.5s ease-in-out; 
@@ -278,14 +269,6 @@
     button
     {
         @extend %button;
-        width: 60%;
-        margin: 20%;
-        transition: all 500ms ease-in-out;  
-
-        &:hover{
-            filter: brightness(120%);              
-        }
-
     }
 
 } 
@@ -301,23 +284,33 @@ footer
 @media screen and (min-width: 768px)
 {
 
-    body{
-        width: 50%;
-        margin-left: 25%;
-    }
-    header
-    {
-        /*.menu-page-header{
-            @extend %menuHeader;              
-        }
-
-        *.homeHeader{
-            @extend %homeHeader;
-        } */       
-    }
-
     .fonctionnalities{
         background-color:lighten($dark-grey, 8%) ;
+    }
+
+    .menuArea
+    {
+        button
+        {
+
+            width: 60%;
+            margin-top: 5%;
+            margin-left: 20%;
+            margin-bottom: 10%;
+
+        }
+
+    }
+    .menuArea__menu{
+
+        width: 30%;
+
+    }
+    .menu__area{
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
 
     }
 

@@ -14,12 +14,22 @@
    //@extend %boxShadow;
    box-shadow: 0.06rem 0.06rem 0.06rem  0.06rem $dark-grey ;
    transition: all 500ms ease-in-out;  
-   transition: box-shadow 500ms ease-in-out;
+  // transition: box-shadow 500ms ease-in-out;
+
 
 
    &:hover{
-      filter: brightness(120%) ;
-      box-shadow: 0.12rem 0.12rem 0.12rem  0.12rem $dark-grey ;
+      filter: brightness(110%) ;
+      box-shadow: 0.20rem 0.20rem 0.20rem 0.20rem $dark-grey ;
               
    }
+
+   @media screen and (min-width: 768px){
+
+      width: 30%;
+      margin-left: 35%; 
+     
+   }
+
+
 }

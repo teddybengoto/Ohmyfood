@@ -1,4 +1,4 @@
-%card
+%functionCard
 {
    display: flex;
    width: 80%;
@@ -10,11 +10,21 @@
    background-color: lighten($dark-grey, 20%) ;
    @include boxShadow(rgba(221, 218, 218, 0.76),1.5px);
 
+
+
    &:hover
     {
         background-color: lighten($primary, 30%) ;
         .iconFonction{
             color: $primary;
         }   
+    }
+
+    @media screen and (min-width: 768px) {
+
+        width: 25%;
+        margin-left: 5%;
+        margin-top: -2rem; 
+
     }
 }
